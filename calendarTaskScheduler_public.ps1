@@ -2,7 +2,7 @@ Function Get-Tasks($path, $schedule)
 ##fonction pour recuperer toutes les tâches planifiés du serveur specifie dans la variable schedule. $path specifie le repertoire de tâches a selectionner.
 {
 	$out = @()
-	$schedule.GetFolder($path).GetTasks(0) | % {########################split name et path.........
+	$schedule.GetFolder($path).GetTasks(0) | % {
 		$xml = [xml]$_.xml
         #construit un object avec les parametres des taches planifiees
         $out += New-Object psobject -Property @{
